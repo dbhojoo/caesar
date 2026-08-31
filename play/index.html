@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Caesar — A Village is Born</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Spectral:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="./assets/index-DAECwmJD.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/data-Bpm629cr.js">
+    <link rel="modulepreload" crossorigin href="./assets/sim-DBKsA6Jw.js">
+    <link rel="modulepreload" crossorigin href="./assets/draw-CxDEp25r.js">
+    <link rel="stylesheet" crossorigin href="./assets/index-BocqQ3_8.css">
+  </head>
+  <body>
+    <div id="app">
+      <header id="topbar">
+        <div class="brand">
+          <span class="eagle">SPQR</span>
+          <div>
+            <strong id="city-name">Colonia</strong>
+            <em>Caesar III · reconstruction</em>
+          </div>
+        </div>
+        <div class="meters">
+          <div><label>Date</label><span id="date">Jan 330</span></div>
+          <div><label>Population</label><span id="pop">0</span></div>
+          <div><label>Workforce</label><span id="jobs">0 / 0</span></div>
+          <div><label>Treasury</label><span id="dn">0 Dn</span></div>
+        </div>
+        <div class="speeds" id="speeds">
+          <button data-speed="0">II</button>
+          <button data-speed="1" class="on">▶</button>
+          <button data-speed="2">▶▶</button>
+          <button data-speed="5">▶▶▶</button>
+        </div>
+      </header>
+
+      <canvas id="city"></canvas>
+
+      <aside id="build">
+        <h2>Build</h2>
+        <nav id="cats"></nav>
+        <div id="items"></div>
+        <button id="clear-btn" class="danger">Clear land</button>
+        <p class="hint" id="build-hint">Select a structure, then click the valley.</p>
+      </aside>
+
+      <div id="overlays">
+        <button data-overlay="none" class="on">City</button>
+        <button data-overlay="water">Water</button>
+        <button data-overlay="desirability">Desir.</button>
+        <button data-overlay="fire">Fire</button>
+        <button data-overlay="damage">Damage</button>
+        <button id="empire-btn" type="button">Empire</button>
+      </div>
+
+      <aside id="inspect" hidden>
+        <button id="inspect-close" type="button" aria-label="Close">×</button>
+        <h3 id="inspect-title">Ground</h3>
+        <div id="inspect-body"></div>
+        <div id="inspect-actions"></div>
+      </aside>
+
+      <aside id="empire" hidden>
+        <button id="empire-close" type="button" aria-label="Close">×</button>
+        <h3>Empire</h3>
+        <p class="hint">Open a route, then staff a trade post (land) or dock (sea). Caravans sell what they bring and buy what they want.</p>
+        <div id="empire-body"></div>
+      </aside>
+
+      <footer id="ticker"></footer>
+
+      <div id="help">
+        WASD / drag to pan · wheel to zoom · left click build · right click inspect
+      </div>
+    </div>
+  </body>
+</html>
