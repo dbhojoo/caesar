@@ -49,8 +49,8 @@ export function inspect(city: City, x: number, y: number): InspectResult | null 
       spec.employees ? `Employees ${b.employees} / ${spec.employees}` : "Needs no workers",
       spec.employees ? `Labor access ${b.laborAccess}` : "",
       spec.immuneRisk ? "Immune to fire and collapse" : `Fire risk ${b.fire} · Damage ${b.damage}`,
-      spec.produces ? `Produces ${spec.produces}.` : "",
     ].filter(Boolean);
+    if (spec.produces) lines.push(`Produces ${spec.produces}.`);
     if (spec.recipe) lines.push(`Turns ${spec.recipe.in} into ${spec.recipe.out}.`);
     const stored = listedStocks(b);
     if (b.type === "granary" || b.type === "market" || b.type === "warehouse" || spec.recipe) {
