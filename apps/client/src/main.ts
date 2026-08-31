@@ -251,7 +251,7 @@ addEventListener("keydown", (e) => {
     e.preventDefault();
     speed = speed === 0 ? 1 : 0;
     document.querySelectorAll("#speeds button").forEach((b) => {
-      b.classList.toggle("on", b === Number((b as HTMLButtonElement).dataset.speed) === speed);
+      b.classList.toggle("on", Number((b as HTMLButtonElement).dataset.speed) === speed);
     });
   }
   if (e.key === "r") selected = "road";
