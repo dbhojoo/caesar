@@ -3,21 +3,21 @@
 The original executable mixed rendering, UI, and simulation in one process, with fixed-size arrays (2000 buildings, walker list, city bytes). A modern backend splits those concerns and keeps the simulation deterministic.
 
 ```
-├────────────────────────────────────────────┐
+┌─────────────────────────────────────────────┐
 │  apps/client  (Vite, Canvas 2D, original art)│
 │  isometric city · overlays · governor chrome │
-└────────────────────├───────────────────────┘
+└─────────────────────┬───────────────────────┘
                       │ commands / snapshots
-├────────────────────└───────────────────────┐
+┌─────────────────────┴───────────────────────┐
 │  apps/server  (optional session host)        │
 │  tick clock · JSON save · WebSocket clients  │
-└────────────────────├───────────────────────┘
+└─────────────────────┬───────────────────────┘
                       │
-├────────────────────└───────────────────────┐
+┌─────────────────────┴───────────────────────┐
 │  packages/sim                                │
 │  map · buildings · walkers · housing · water │
 │  labor · industry · migration · overlays     │
-└────────────────────────────────────────────┘
+└─────────────────────────────────────────────┘
 ```
 
 The client can run `packages/sim` **in-process** (default) so a governor can play without a server. The server runs the same tick function and is the path to multiplayer spectating, persistence, and later headless campaigns.
