@@ -1,0 +1,12 @@
+{
+  "name": "@caesar/protocol",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@caesar/sim": "0.1.0"
+  }
+}

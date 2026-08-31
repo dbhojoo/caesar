@@ -1,0 +1,20 @@
+{
+  "name": "caesar",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A from-first-principles Caesar III city simulation with a modern backend and classic isometric feel.",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w @caesar/client",
+    "dev:server": "npm run dev -w @caesar/server",
+    "build": "npm run build -w @caesar/sim && npm run build -w @caesar/client && npm run build -w @caesar/server",
+    "test": "npm run test -w @caesar/sim",
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

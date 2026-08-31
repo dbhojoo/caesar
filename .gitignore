@@ -1,0 +1,14 @@
+node_modules
+dist
+.turbo
+.cache
+*.log
+.DS_Store
+coverage
+.env
+.env.*
+apps/client/dist
+apps/server/dist
+packages/*/dist
+.vite
+data/saves/*.json
